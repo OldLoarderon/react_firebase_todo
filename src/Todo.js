@@ -1,15 +1,18 @@
 import React from 'react';
-import { List, ListItem, ListItemText } from '@material-ui/core';
+import './Todo.css';
+import { List, ListItem, ListItemText, Button } from '@material-ui/core';
+import db from 'firebase';
+import '@firebase/firestore';
 
 function Todo(props) {
     return (
-        <List>
+        <List className="todo__list">
             <ListItem>
-                <ListItemText primary="Todo" secondary={props.text}/>
+                <ListItemText primary={props.todo.todo} secondary="Dummy deadline"/>
             </ListItem>
-
+            <Button onClick={event => db.collection('todos').doc(props.todo.id).delete()}>DELETE ME</Button>
         </List>
     )
 }
 
-export default Todo
+export default Todo;
