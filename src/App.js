@@ -8,7 +8,7 @@ import { db } from './firebase';
 
 function App() {
   // Kiss my gf', 'Take out trash', 'Work out:', 'Pushups ', 'Crunches', 'Sit-ups', 'Everyday coding
-  const [todos, setTodos] = useState(['']);
+  const [todos, setTodos] = useState([]);
   const [input, setinput] = useState('');
   
   //when the app loads, listen to database and fetch new todos on change (add, remove etc.)
@@ -51,7 +51,7 @@ function App() {
         ))}
         </ul>
           </div>
-  );
-}
+  )
+        };
 
-export default App;
+        export default App;
